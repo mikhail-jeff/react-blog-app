@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react';
 import BlogList from '../components/BlogList';
+import { SpinnerDotted } from 'spinners-react';
+import useFetch from '../hooks/useFetch';
 
 const Home = () => {
-	const [blogs, setBlogs] = useState(null);
-
-	useEffect(() => {
-		fetch('http://localhost:8000/blogs')
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setBlogs(data);
-			});
-	}, []);
+	const { data: blogs, isLoading, error } = useFetch('http://localhost:8000/blogs');
 
 	return (
 		<section>
-			<div className='home'>{blogs && <BlogList blogs={blogs} title='Blog Lists' />}</div>
+			<div className='home'>
+				{error && <p>{error}</p>}
+				{isLoading && (
+					<div>
+						<h3 className='spinner-container'>
+							<SpinnerDotted />
+						</h3>
+					</div>
+				)}
+				{blogs && <BlogList blogs={blogs} title='Blog Lists' />}
+			</div>
 		</section>
 	);
 };
