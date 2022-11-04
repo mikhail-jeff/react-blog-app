@@ -112,6 +112,12 @@ h2 {
 	padding: 8px;
 	border-radius: 8px;
 	cursor: pointer;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.error-message p {
+	text-align: center;
 }
 
 /** create new blog form */
@@ -145,6 +151,8 @@ h2 {
 	padding: 8px;
 	border-radius: 8px;
 	cursor: pointer;
+	width: 100%;
+	margin-top: 10px;
 }
 
 /** About Page */
@@ -162,6 +170,16 @@ h2 {
 
 .about p {
 	text-align: justify;
+}
+
+/* * Error Page */
+.error-page {
+	text-align: center;
+}
+
+.error-page h2 {
+	margin: 20px auto;
+	color: dodgerblue;
 }
 
 /* * Spinner container */
