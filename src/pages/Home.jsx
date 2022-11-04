@@ -7,6 +7,9 @@ const Home = () => {
 
 	return (
 		<section>
+			<div className='home-title'>
+				<h2>Blog Lists</h2>
+			</div>
 			<div className='home'>
 				{error && <p>{error}</p>}
 				{isLoading && (
@@ -16,7 +19,7 @@ const Home = () => {
 						</h3>
 					</div>
 				)}
-				{blogs && <BlogList blogs={blogs} title='Blog Lists' />}
+				{blogs && <BlogList blogs={blogs} />}
 			</div>
 		</section>
 	);
